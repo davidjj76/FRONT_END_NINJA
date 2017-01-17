@@ -18,6 +18,10 @@ $song-border-width: 1px;
 		.artist {
 			margin-top: 25px;
 			font-size: $font-size-large;
+			@include text-overflow-ellipsis;
+		}
+		.title {
+			@include text-overflow-ellipsis;
 		}
 	}
 
