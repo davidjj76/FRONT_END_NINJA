@@ -5,8 +5,11 @@ $web-header-text-color: white;
 // styles
 .web-header {
 	background: $web-header-background-color;
+	padding: 10px;
 	.web-title {
 		color: $web-header-text-color;
 		text-align: center;
+		margin: 0px;
+		text-shadow: 2px 2px 0px darken($web-header-background-color, 30%);
 	}
 }
