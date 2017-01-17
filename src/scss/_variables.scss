@@ -1,0 +1,29 @@
+// font families
+$main-font-family: "Slabo 27px", serif;
+$titles-font-family: "Patua One", serif;
+$body-font-family: $main-font-family;
+
+// font sizes
+$font-size-base: 16px;
+$font-size-small: $font-size-base - 6px;
+$font-size-large: $font-size-base + 6px;
+$font-size-h1: $font-size-base + 15px;
+$font-size-h2: $font-size-base + 12px;
+$font-size-h3: $font-size-base + 9px;
+$font-size-h4: $font-size-base + 6px;
+$font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;
+
+// colors
+$color-beautys-bath: #255D67;
+$color-pico-sky: #4DC1D6;
+$color-nuclear-orange: #FF8D13;
+$color-shiver: #FFB96F;
+$color-grey: #D5D5D5;
+
+// components colors
+$color-primary: $color-pico-sky;
+$color-secondary: $color-nuclear-orange;
+
+$main-text-color: $color-beautys-bath;
+$body-background-color: white;

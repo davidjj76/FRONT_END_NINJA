@@ -1,0 +1,12 @@
+// variables
+$web-header-background-color: $color-primary;
+$web-header-text-color: white;
+
+// styles
+.web-header {
+	background: $web-header-background-color;
+	.web-title {
+		color: $web-header-text-color;
+		text-align: center;
+	}
+}
