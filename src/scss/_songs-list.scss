@@ -1,0 +1,24 @@
+// variables
+$song-cover-width: 100px;
+$song-border-color: $color-grey;
+$song-border-width: 1px;
+
+// styles
+.songs-list {
+
+	.song {
+		@extend .clearfix;
+		padding: 15px;
+		border-bottom: $song-border-width solid $song-border-color;
+		.cover {
+			width: $song-cover-width;
+			float: left;
+			margin-right: 20px;
+		}
+		.artist {
+			margin-top: 25px;
+			font-size: $font-size-large;
+		}
+	}
+
+}
