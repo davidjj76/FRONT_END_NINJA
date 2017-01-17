@@ -27,3 +27,8 @@ $color-secondary: $color-nuclear-orange;
 
 $main-text-color: $color-beautys-bath;
 $body-background-color: white;
+
+// responsive breakpoints
+$large-screen-width: 1024px; 
+$medium-screen-width: 768px; 
+$small-screen-width: $medium-screen-width - 1px;

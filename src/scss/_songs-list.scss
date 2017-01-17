@@ -5,21 +5,44 @@ $song-border-width: 1px;
 
 // styles
 .songs-list {
+	@include if-is-medium-screen {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
 	.song {
 		@extend .clearfix;
 		padding: 15px;
 		border-bottom: $song-border-width solid $song-border-color;
+		@include if-is-medium-screen {
+			width: 20%; //calc(20% - 30px);
+			box-sizing: border-box;
+			text-align: center;
+		}
+		@include if-is-large-screen {
+			width: (100% / 6);
+		}
+
 		.cover {
 			width: $song-cover-width;
 			float: left;
 			margin-right: 20px;
+			@include if-is-medium-screen {
+				float: none;
+				margin: 0px;
+				width: 100%;
+			}
 		}
+
 		.artist {
 			margin-top: 25px;
 			font-size: $font-size-large;
 			@include text-overflow-ellipsis;
+			@include if-is-medium-screen {
+				margin-top: 5px;
+			}
 		}
+
 		.title {
 			@include text-overflow-ellipsis;
 		}
