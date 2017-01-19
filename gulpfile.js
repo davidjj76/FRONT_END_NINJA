@@ -2,8 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
+var concat = require('gulp-concat');
 
-gulp.task('default', ['compile-sass'], function() {
+gulp.task('default', ['compile-sass', 'concat-js'], function() {
 
 	// arrancar el servidor de browser sync
 	browserSync.init({
@@ -12,6 +13,9 @@ gulp.task('default', ['compile-sass'], function() {
 
 	// detecta cambios en style.scss y ejecuta la tarea compile-sass
     gulp.watch('./src/scss/*.scss', ['compile-sass']);
+
+    // detecta cambios en el js y ejecuta la tarea concat-js
+    gulp.watch('./src/js/*.js', ['concat-js']);
 
     // detecta cambios en el html
     gulp.watch('./*.html', function() {
@@ -22,6 +26,7 @@ gulp.task('default', ['compile-sass'], function() {
     });
 });
 
+// compilar scss
 gulp.task('compile-sass', function() {
 	gulp.src('./src/scss/style.scss')					// cargo el scss
 	.pipe(sass().on('error', function(error) {
@@ -30,4 +35,13 @@ gulp.task('compile-sass', function() {
 	.pipe(gulp.dest('./dist/'))							// dejo el resultado en ./dist
 	.pipe(browserSync.stream())							// recargar css en el navegador
 	.pipe(notify('SASS Compiled!!!'));					
+});
+
+// concatenar js
+gulp.task('concat-js', function() {
+	gulp.src('./src/js/*.js')
+	.pipe(concat('main.js'))
+	.pipe(gulp.dest('./dist'))
+	.pipe(notify('JS Concatenated!!!'))
+	.pipe(browserSync.stream());
 });

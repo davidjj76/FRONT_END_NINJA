@@ -2,23 +2,24 @@ body {
 
 	&.ui-songs-list-shown {
 		// SI se debe ver el listado de canciones
-		.songs-list {
-			display: block;
-		}
+		.songs-list { display: block; }
 		// NO se debe ver el form de alta		
-		.new-song-form {
-			display: none;
+		.new-song-form { display: none; }
+
+		@include if-is-medium-screen {
+			.songs-list { display: flex; }
 		}
+		
 	}
 
 	&.ui-form-shown {
 		// NO se debe ver el listado de canciones
-		.songs-list {
-			display: none;
-		}
+		.songs-list { display: none; }
 		// SI se debe ver el form de alta		
-		.new-song-form {
-			display: flex;
+		.new-song-form { display: flex; }
+
+		@include if-is-medium-screen {
+			.songs-list { display: flex; }
 		}
 	}
 

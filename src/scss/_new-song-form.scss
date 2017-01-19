@@ -12,4 +12,19 @@
 	top: 0px;
 	width: 100%;
 	z-index: 0;
+
+	@include if-is-medium-screen {
+		height: auto;
+		position: relative;
+		flex-direction: row;
+		flex-wrap: wrap;
+		div {
+			width: calc(50% - 10px);
+			margin: 0 5px;
+		}
+		button {
+			width: 20%;
+		}
+	}
+
 }
