@@ -1,0 +1,25 @@
+body {
+
+	&.ui-songs-list-shown {
+		// SI se debe ver el listado de canciones
+		.songs-list {
+			display: block;
+		}
+		// NO se debe ver el form de alta		
+		.new-song-form {
+			display: none;
+		}
+	}
+
+	&.ui-form-shown {
+		// NO se debe ver el listado de canciones
+		.songs-list {
+			display: none;
+		}
+		// SI se debe ver el form de alta		
+		.new-song-form {
+			display: flex;
+		}
+	}
+
+}
